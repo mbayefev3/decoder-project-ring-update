@@ -28,7 +28,6 @@ describe('substitution', () =>{
 
         it('It correctly translates the given phrase, based on the alphabet given to the function', () =>{
 
-            // substitution("thinkful", "xoyqmcgrukswaflnthdjpzibev"); //> 'jrufscpw'
             const input ='thinkful'
             const alphabet="xoyqmcgrukswaflnthdjpzibev"
             const actual=substitution(input,alphabet)
@@ -39,9 +38,7 @@ describe('substitution', () =>{
 
         it('It maintains spaces in the message, before and after encoding', () =>{
 
-            // substitution("You are an excellent spy", "xoyqmcgrukswaflnthdjpzibev"); //> 'elp xhm xf mbymwwmfj dne'
-
-            // substitution("thinkful", "xoyqmcgrukswaflnthdjpzibev"); //> 'jrufscpw'
+           
             const input ="You are an excellent spy"
             const alphabet="xoyqmcgrukswaflnthdjpzibev"
             const actual=substitution(input,alphabet)
@@ -52,7 +49,6 @@ describe('substitution', () =>{
         
         it('ignores capital letters', () =>{
 
-            // substitution("You are an excellent spy", "xoyqmcgrukswaflnthdjpzibev"); //> 'elp xhm xf mbymwwmfj dne'
 
             substitution("thinkful", "xoyqmcgrukswaflnthdjpzibev"); //> 'jrufscpw'
 
@@ -68,7 +64,6 @@ describe('substitution', () =>{
     describe('decoding part', () => {
         it('It correctly translates the given phrase, based on the alphabet given to the function', () =>{
 
-            // substitution("y&ii$r&", "$wae&zrdxtfcygvuhbijnokmpl", false); //> "message"            const input ='thinkful'
             const input ="y&ii$r&"
             const alphabet="$wae&zrdxtfcygvuhbijnokmpl"
             const actual=substitution(input,alphabet,false)
@@ -79,10 +74,7 @@ describe('substitution', () =>{
 
         it('ignores capital letters', () =>{
 
-            // substitution("You are an excellent spy", "xoyqmcgrukswaflnthdjpzibev"); //> 'elp xhm xf mbymwwmfj dne'
-
-            // substitution("thinkful", "xoyqmcgrukswaflnthdjpzibev"); //> 'jrufscpw'
-            // substitution("jrufscpw", "xoyqmcgrukswaflnthdjpzibev", false); //> 'thinkful'
+            
 
 
             const input ="JRufscpw"
@@ -96,7 +88,6 @@ describe('substitution', () =>{
         
         it('It maintains spaces in the message, before and after decoding', () =>{
 
-            // substitution("y&ii$r&", "$wae&zrdxtfcygvuhbijnokmpl", false); //> "message"
 
             const input ="y & ii$r&"
             const alphabet="$wae&zrdxtfcygvuhbijnokmpl"

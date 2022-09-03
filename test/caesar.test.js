@@ -49,7 +49,6 @@ it('returns false if the given shift value is not present', () =>{
     })
     describe('encoding part',() =>{
         it('it gnores capital letters', () =>{
-            // caesar("This is a secret message!", 8); //> 'bpqa qa i amkzmb umaaiom!'
             const input="This is a secret message!"
             const shift=8
             const expected='bpqa qa i amkzmb umaaiom!'
@@ -58,7 +57,6 @@ it('returns false if the given shift value is not present', () =>{
 
         })
 
-        // caesar("Zebra Magazine", 3) => "cheud pdjdclqh")
     it('when encoding it handles shifts that goes past the end of the alphabet',()=>{
         const input='Zebra Magazine'
         const shift=3
@@ -68,10 +66,8 @@ it('returns false if the given shift value is not present', () =>{
 
     })
 
-    // It maintains spaces and other nonalphabetic symbols in the message, before and after encoding or decoding.
     it('It maintains spaces and other nonalphabetic symbols in the message, before and after encoding',() =>{
 
-        // caesar("This is a secret message!", 8); //> 'bpqa qa i amkzmb umaaiom!'
         const input="This&is a secret message!"
         const shift=8
         const expected='bpqa&qa i amkzmb umaaiom!'
@@ -82,9 +78,7 @@ it('returns false if the given shift value is not present', () =>{
     })
 
     describe('decoding part',() =>{
-        it('it gnores capital letters', () =>{
-            // caesar("This is a secret message!", 8); //> 'bpqa qa i amkzmb umaaiom!'
-            // caesar("BPQA qa I amkzmb umaaiom!", 8, false); //> 'this is a secret message!'
+        it('it ignores capital letters', () =>{
             const input="BPQA qa I amkzmb umaaiom!"
             const expected='this is a secret message!'
             const shift=8
@@ -96,7 +90,6 @@ it('returns false if the given shift value is not present', () =>{
 
         it('It maintains spaces and other nonalphabetic symbols in the message, before and after decoding',() =>{
 
-            // caesar("This is a secret message!", 8); //> 
             const input='bpqa$$qa i amkzmb umaaiom!'
             const shift=8
             const expected="this$$is a secret message!"
