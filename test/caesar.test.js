@@ -2,7 +2,6 @@
 
 const {caesar}= require('../src/caesar')
 const expect=require('chai').expect
-// console.log(caesar)
 
 // It returns false if the shift value is equal to 0, less than -25, greater than 25, or not present.
 
