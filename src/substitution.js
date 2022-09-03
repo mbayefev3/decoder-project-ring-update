@@ -9,10 +9,11 @@ const substitutionModule = (function () {
 
   
   function substitution(input, alphabet, encode = true) {
+    input=input.toLowerCase()
 
     if(alphabet===undefined) return false
     
-      if([... new Set(alphabet)].length!==26) return false
+      if([... new Set(alphabet)].length!== alphabet.length || alphabet.length!==26) return false
       
     
       const alphabetsList=[
