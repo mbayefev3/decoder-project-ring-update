@@ -10,15 +10,12 @@ const substitutionModule = (function () {
   
   function substitution(input, alphabet, encode = true) {
 
-    if(alphabet===undefined){
-      return false
-    }
-      if([... new Set(alphabet)].length!==26){
+    if(alphabet===undefined) return false
     
-        return false
-      }
+      if([... new Set(alphabet)].length!==26) return false
+      
     
-      const table=[
+      const alphabetsList=[
         'A','B','C','D','E','F',
         'G','H','I','J','K',
         'L','M','N','O','P','Q','R','S',
@@ -26,38 +23,38 @@ const substitutionModule = (function () {
         ]
     
         if(encode){
-          const char=input.split('').map(c => {
-            if(c===' '){
-              return c
+          const characterIndexexFromArray=input.split('').map(character => {
+            if(character===' '){
+              return character
             }else{
-            return  table.indexOf(c.toUpperCase())
+            return  alphabetsList.indexOf(character.toUpperCase())
             }
           })  
-           const an=char.map(c =>{
-             if(c===' '){
-               return c
+           const character=characterIndexexFromArray.map(character =>{
+             if(character===' '){
+               return character
              }else{
-               return alphabet[c]
+               return alphabet[character]
              }
            })
-          return an.join('')
+          return character.join('')
         }else{
           
-          const getIndex=input.split('').map(c => {
-            if(alphabet.indexOf(c)!==-1){
-              return alphabet.indexOf(c)
+          const getIndex=input.split('').map(character => {
+            if(alphabet.indexOf(character)!==-1){
+              return alphabet.indexOf(character)
             }else{
-             return c
+             return character
             }
           })
           // console.log(getIndex)
-          const alpha=getIndex.map(c => {
-            if(c===' '){
-              return c
+          const character=getIndex.map(character => {
+            if(character===' '){
+              return character
             }
-            return table[c]
+            return alphabetsList[character]
           })
-          return alpha.join('').toLowerCase()
+          return character.join('').toLowerCase()
         }
         
       // your solution code here

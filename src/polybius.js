@@ -8,7 +8,7 @@ const polybiusModule = (function () {
 
   
 function polybius(input, encode = true) {
-  const array=[
+  const alphabets=[
 'A','B','C','D','E','F',
 'G','H','I','J','K',
 'L','M','N','O','P','Q','R','S',
@@ -17,9 +17,9 @@ function polybius(input, encode = true) {
 
 
 if(encode===false){
-  let idx=input.indexOf(' ')
-if(idx!==-1){
-  if(input.replace(input[idx],'').length%2!==0)return false
+  let getIndexOfSpace=input.indexOf(' ')
+if(getIndexOfSpace!==-1){
+  if(input.replace(input[getIndexOfSpace],'').length%2!==0)return false
 
 }else if(input.length%2!==0) return false
 }
@@ -30,89 +30,89 @@ let container=[]
 let arrHolder=[]
 
 
-for(let char of array){
+for(let character of alphabets){
 
 
 if(arrHolder.length%5===0 && arrHolder.length!==0){
   container.push(arrHolder)
   arrHolder=[]
-} if(char==='I'){arrHolder.push('I/J')}
- else if(char!=='J'){ arrHolder.push(char) }}
+} if(character==='I'){arrHolder.push('I/J')}
+ else if(character!=='J'){ arrHolder.push(character) }}
 
 container.push(arrHolder)
 // console.log(container)
 
 if(encode){
   
-const getDigits=(c) =>{
-  c=c.toUpperCase()
-let x=''
-let y=''
+const getDigits=(character) =>{
+  character=character.toUpperCase()
+let firstDigitChar=''
+let secondDigitChar=''
 for(let i=0; i<container.length; i++){
-if(c==='I' ||c==='J'){
+if(character==='I' ||character==='J'){
   if(container[i].indexOf('I/J')!==-1){
-    x=container[i].indexOf('I/J')+1
-    y=i+1
+    firstDigitChar=container[i].indexOf('I/J')+1
+    secondDigitChar=i+1
     continue
   }
 
 }
-  if(container[i].indexOf(c)!==-1){
-    x=container[i].indexOf(c)+1
-    y=i+1
+  if(container[i].indexOf(character)!==-1){
+    firstDigitChar=container[i].indexOf(character)+1
+    secondDigitChar=i+1
   }
 } 
 
-return x+''+y
+return firstDigitChar+''+secondDigitChar
 
 }
 
-const answer=input.toUpperCase().split('').map(c => {
-  if(c===' '){
-    return c
+const result=input.toUpperCase().split('').map(character => {
+  if(character===' '){
+    return character
   }
   else{
-  return  getDigits(c)
+  return  getDigits(character)
   }
 })
-return answer.join('')
+return result.join('')
 // console.log(getDigits('k'))
 // console.log(container)
 }else{
-let answer=[]
-let char=''
+let placeHolder=[]
+let character=''
 for(let i=0; i<input.length; i++){
   if(input[i]===' '){
-    answer.push(' ')
+    placeHolder.push(' ')
     continue
   }
-  char+=input[i]
-  if(char.length===2){
-answer.push(char)
-char=''
+  character+=input[i]
+  if(character.length===2){
+placeHolder.push(character)
+character=''
   }
 }
-// console.log(answer)
-answer=answer.map(c => {
+// console.log(placeHolder)
+placeHolder=placeHolder.map(character => {
 
-  if(c===' '){
+  if(character===' '){
     return ' '
   }else{
-const first=Number(c[0])
-  const second=Number(c[1])
-  const sol=container[second-1][first-1]
-  // console.log('f',sol)
-  if(sol==='I/J'){
+const first=Number(character[0])
+  const second=Number(character[1])
+  const getCharacter=container[second-1][first-1]
+  // console.log('f',getCharacter)
+  if(getCharacter==='I/J'){
     return '(i/j)'
   }else{
-    return sol
+    return getCharacter
   }
   }
      
    
 })
 
-return answer.join('').toLowerCase()
+return placeHolder.join('').toLowerCase()
 }
 }
 

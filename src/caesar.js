@@ -38,7 +38,7 @@ let encodedInput=''
           continue
         }
         let addIndexAndShift=index+shift
-        if(addIndexAndShift <25) {
+        if(addIndexAndShift <=25) {
           encodedInput+=alphabets[addIndexAndShift]
         }else {
           let totalIndexInAlphabets=25
