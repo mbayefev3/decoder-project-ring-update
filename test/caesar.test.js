@@ -7,42 +7,30 @@ const expect=require('chai').expect
 
 
 describe('caesar',()=>{
-
-    describe('Errors checking',() =>{
+ describe('Errors checking',() =>{
      it('returns false if the given shift value is equal to 0', () =>{
         const input='thinkful'
        const shift=0
        const actual=caesar(input,shift)
-
-       expect(actual).to.be.false
-
-
-   }) 
+expect(actual).to.be.false
+}) 
    it('returns false if the given shift value is less than -25', () =>{
     const input='thinkful'
    const shift=-26
    const actual=caesar(input,shift)
-
-   expect(actual).to.be.false
-
-
+expect(actual).to.be.false
 }) 
 it('returns false if the given shift value is greater than 25', () =>{
     const input='thinkful'
    const shift=99
    const actual=caesar(input,shift)
-
-   expect(actual).to.be.false
-
-
+ expect(actual).to.be.false
 }) 
 it('returns false if the given shift value is not present', () =>{
     const input='thinkful'
 //    const shift=99
    const actual=caesar(input)
-
-   expect(actual).to.be.false
-
+expect(actual).to.be.false
 
 })
     })
@@ -62,12 +50,10 @@ it('returns false if the given shift value is not present', () =>{
         const expected="cheud pdjdclqh"
         const actual=caesar(input,shift)
         expect(actual).to.equal(expected)
-
-    })
+ })
 
     it('It maintains spaces and other nonalphabetic symbols in the message, before and after encoding',() =>{
-
-        const input="This&is a secret message!"
+          const input="This&is a secret message!"
         const shift=8
         const expected='bpqa&qa i amkzmb umaaiom!'
         const actual=caesar(input,shift)
@@ -88,8 +74,7 @@ it('returns false if the given shift value is not present', () =>{
         })
 
         it('It maintains spaces and other nonalphabetic symbols in the message, before and after decoding',() =>{
-
-            const input='bpqa$$qa i amkzmb umaaiom!'
+              const input='bpqa$$qa i amkzmb umaaiom!'
             const shift=8
             const expected="this$$is a secret message!"
             const encoded=false

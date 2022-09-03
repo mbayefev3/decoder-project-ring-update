@@ -7,7 +7,6 @@ const caesarModule = (function () {
   // you can add any code you want within this function scope
 
   function caesar(input, shift, encode = true) {
-
     const alphabets=[
       'A','B','C','D','E',
       'F','G','H','I','J','K',
@@ -16,7 +15,6 @@ const caesarModule = (function () {
     ]
 
 if(!shift || shift< -25 || shift>25) return false
-
 const helperFuncOne=(input) =>{
    return input.toUpperCase().split('').map(character => {
     if(alphabets.indexOf(character)!==-1){
@@ -26,13 +24,10 @@ const helperFuncOne=(input) =>{
     }
   })
 }
-
-    if(shift>0 && encode){
-
+ if(shift>0 && encode){
 let encodedInput=''
       const modifiedInputToArrayAndGetIndex=helperFuncOne(input)
-  
-      for(let index of modifiedInputToArrayAndGetIndex){
+   for(let index of modifiedInputToArrayAndGetIndex){
         if(typeof index ==='string'){
           encodedInput+=index
           continue
@@ -52,7 +47,6 @@ let encodedInput=''
           }
         }
       }
-
 return encodedInput.toLowerCase()
     }
     else if(shift <0 && encode){
@@ -110,8 +104,6 @@ return encodedInput.toLowerCase()
       }
       return decodedInput.toLowerCase()
     }else if(shift <0 && !encode){
-
-      
 let encodedInput=''
 const modifiedInputToArrayAndGetIndex=helperFuncOne(input)
 for(let index of modifiedInputToArrayAndGetIndex){
@@ -134,7 +126,6 @@ for(let index of modifiedInputToArrayAndGetIndex){
     }
   }
 }
-
 return encodedInput.toLowerCase()
     }
   }

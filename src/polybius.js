@@ -5,8 +5,6 @@
 
 const polybiusModule = (function () {
   // you can add any code you want within this function scope
-
-  
 function polybius(input, encode = true) {
   const alphabets=[
 'A','B','C','D','E','F',
@@ -14,34 +12,22 @@ function polybius(input, encode = true) {
 'L','M','N','O','P','Q','R','S',
 'T','U','V','W','X','Y','Z'
 ]
-
-
 if(encode===false){
   let getIndexOfSpace=input.split('').filter(character => character !==' ')
   if(getIndexOfSpace.length%2!==0) return false
 }
-
-
-
 let container=[]
 let arrHolder=[]
-
-
 for(let character of alphabets){
-
-
 if(arrHolder.length%5===0 && arrHolder.length!==0){
   container.push(arrHolder)
   arrHolder=[]
 } if(character==='I'){arrHolder.push('I/J')}
  else if(character!=='J'){ arrHolder.push(character) }}
-
 container.push(arrHolder)
 // console.log(container)
-
 if(encode){
-  
-const getDigits=(character) =>{
+  const getDigits=(character) =>{
   character=character.toUpperCase()
 let firstDigitChar=''
 let secondDigitChar=''
@@ -59,11 +45,9 @@ if(character==='I' ||character==='J'){
     secondDigitChar=i+1
   }
 } 
-
 return firstDigitChar+''+secondDigitChar
 
 }
-
 const result=input.toUpperCase().split('').map(character => {
   if(character===' '){
     return character

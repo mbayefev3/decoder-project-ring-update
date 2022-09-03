@@ -31,21 +31,14 @@ it('maintains spaces in the message, before and after encoding',()=>{
     const actual=polybius(message)
     expect(actual).to.equal(expected)
 })
-
-
-
-
-    })
+ })
 
 
     describe('decoding part', () => {
-
-        it('When decoding, it translates the number 42 to (i/j)', () =>{
-
+  it('When decoding, it translates the number 42 to (i/j)', () =>{
             const message='42'
             const expected='(i/j)'
             const actual=polybius(message,false)
-
             expect(actual).to.equal(expected)
         })
 
@@ -54,8 +47,7 @@ it('maintains spaces in the message, before and after encoding',()=>{
             const message="32 51131343 2543241341"
             const actual=polybius(message,false)
             expect(actual).to.equal(expected)
-
-        })
+  })
 
 
     })

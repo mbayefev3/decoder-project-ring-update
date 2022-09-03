@@ -7,7 +7,6 @@ describe('substitution', () =>{
     describe('error checking', () =>{
 
         it('returns false if the given alphabet isn\'t exactly 26 characters long.', () =>{
-
             const input='thinkful'
             const alphabet='short'
             const actual=substitution(input,alphabet)
@@ -15,7 +14,6 @@ describe('substitution', () =>{
 
         })
         it('returns false if there are any duplicate characters in the given alphabet', () =>{
-
             const input='thinkful'
             const alphabet= "abcabcabcabcabcabcabcabcyz"
             const actual=substitution(input,alphabet)
@@ -27,8 +25,7 @@ describe('substitution', () =>{
     describe('decoding part', () =>{
 
         it('It correctly translates the given phrase, based on the alphabet given to the function', () =>{
-
-            const input ='thinkful'
+             const input ='thinkful'
             const alphabet="xoyqmcgrukswaflnthdjpzibev"
             const actual=substitution(input,alphabet)
             const expected='jrufscpw'
@@ -37,8 +34,6 @@ describe('substitution', () =>{
         })
 
         it('It maintains spaces in the message, before and after encoding', () =>{
-
-           
             const input ="You are an excellent spy"
             const alphabet="xoyqmcgrukswaflnthdjpzibev"
             const actual=substitution(input,alphabet)
@@ -48,11 +43,8 @@ describe('substitution', () =>{
         })
         
         it('ignores capital letters', () =>{
-
-
-            substitution("thinkful", "xoyqmcgrukswaflnthdjpzibev"); //> 'jrufscpw'
-
-            const input ="THinkful"
+  substitution("thinkful", "xoyqmcgrukswaflnthdjpzibev"); //> 'jrufscpw'
+             const input ="THinkful"
             const alphabet="xoyqmcgrukswaflnthdjpzibev"
             const actual=substitution(input,alphabet)
             const expected='jrufscpw'
@@ -63,8 +55,7 @@ describe('substitution', () =>{
 
     describe('decoding part', () => {
         it('It correctly translates the given phrase, based on the alphabet given to the function', () =>{
-
-            const input ="y&ii$r&"
+             const input ="y&ii$r&"
             const alphabet="$wae&zrdxtfcygvuhbijnokmpl"
             const actual=substitution(input,alphabet,false)
             const expected="message"
@@ -73,11 +64,7 @@ describe('substitution', () =>{
         })
 
         it('ignores capital letters', () =>{
-
-            
-
-
-            const input ="JRufscpw"
+             const input ="JRufscpw"
             const alphabet="xoyqmcgrukswaflnthdjpzibev"
             const actual=substitution(input,alphabet,false)
             const expected='thinkful'
@@ -87,9 +74,7 @@ describe('substitution', () =>{
 
         
         it('It maintains spaces in the message, before and after decoding', () =>{
-
-
-            const input ="y & ii$r&"
+              const input ="y & ii$r&"
             const alphabet="$wae&zrdxtfcygvuhbijnokmpl"
             const actual=substitution(input,alphabet,false)
             const expected= "m e ssage"
