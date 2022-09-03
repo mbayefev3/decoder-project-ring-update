@@ -27,6 +27,41 @@ it('ignores capital letters', () =>{
     expect(actual).to.equal(expected)
 
 })
+it('maintains spaces in the message, before and after encoding',()=>{
+
+    const message="H ello world"
+    const expected='32 51131343 2543241341'
+    const actual=polybius(message)
+    expect(actual).to.equal(expected)
+})
+
+// It maintains spaces in the message, before and after encoding or decoding.
+
+
+
+    })
+
+
+    describe('decoding part', () => {
+
+        it('When decoding, it translates the number 42 to (i/j)', () =>{
+
+            const message='42'
+            const expected='(i/j)'
+            const actual=polybius(message,false)
+
+            expect(actual).to.equal(expected)
+        })
+
+        it('It maintains spaces in the message, before and after decoding', () =>{
+            // polybius("3251131343 2543241341", false); //> "hello world"
+            const expected="h ello world"
+            const message="32 51131343 2543241341"
+            const actual=polybius(message,false)
+            expect(actual).to.equal(expected)
+
+        })
+
 
     })
 })

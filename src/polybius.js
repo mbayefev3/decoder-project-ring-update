@@ -17,11 +17,8 @@ function polybius(input, encode = true) {
 
 
 if(encode===false){
-  let getIndexOfSpace=input.indexOf(' ')
-if(getIndexOfSpace!==-1){
-  if(input.replace(input[getIndexOfSpace],'').length%2!==0)return false
-
-}else if(input.length%2!==0) return false
+  let getIndexOfSpace=input.split('').filter(character => character !==' ')
+  if(getIndexOfSpace.length%2!==0) return false
 }
 
 
