@@ -146,9 +146,5 @@ return encodedInput.toLowerCase()
 
 
 
-// caesar("wklqnixo", 3, false); //> 'thinkful'
-
-// caesar("thinkful", 3); //> 'wklqnixo'
-// aesar("thinkful", -3); //> 'qefkhcri'
 
 module.exports = { caesar: caesarModule.caesar };
